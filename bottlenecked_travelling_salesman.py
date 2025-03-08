@@ -28,6 +28,7 @@ def bottlenecked_travelling_salesman_cutting_edges(n, k, seed=None):
     sorted_distances_inds = np.argsort(distances.flatten())[::-1]
 
     for i in range(0,n**2,2):
+    #for i in range(0, 2*(n-1), 2):
         x, y = inds[sorted_distances_inds[i]]
 
         if(np.sum(pr_bit_mask[x, :]) == 2 or
@@ -66,7 +67,7 @@ def bottlenecked_travelling_salesman_cutting_edges(n, k, seed=None):
 
 if __name__ == '__main__':
 
-    n = 100
+    n = 10
     k = 3
     seed = 42069
     points, distances = generate_points_and_distances(n, seed=seed)
